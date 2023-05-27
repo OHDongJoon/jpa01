@@ -32,3 +32,7 @@ CREATE TABLE OrderItem (
                             order_price INT,
                             count INT
 );
+
+insert into Member (id, name, city, street, zipcode) values (1, '회원1', '서울', '강가', '123-123');
+
+select * from Member

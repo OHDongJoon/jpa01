@@ -2,8 +2,7 @@ package com.example.jpa;
 
 
 
-import com.example.jpa.domain.Order;
-import com.example.jpa.domain.OrderItem;
+import com.example.jpa.jpql.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -11,7 +10,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-
 
 @SpringBootApplication
 public class JpaApplication  implements CommandLineRunner {
@@ -32,7 +30,9 @@ public class JpaApplication  implements CommandLineRunner {
 		entityManager.getTransaction().begin();
 
 		try {
-
+			Member member = new Member();
+			member.setUsername("hello");
+			entityManager.persist(member);
 //			Order order = new Order();
 //			order.addOrderItem(new OrderItem());
 ////			OrderItem orderItem = new OrderItem();
